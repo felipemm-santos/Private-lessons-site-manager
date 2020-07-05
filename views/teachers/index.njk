@@ -1,5 +1,12 @@
 {% extends "layout.njk" %}
 
+{% block styles %}
+    <link rel="stylesheet" href="/styles/teachers.css"/>
+{% endblock styles %}
+
 {% block content %}
-    Teachers
+    <div class="card">
+        <section class="avatar"></section>
+        <section class="details"></section>
+    </div>
 {% endblock content %}

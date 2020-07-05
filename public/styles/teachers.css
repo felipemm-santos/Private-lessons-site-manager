@@ -1,0 +1,10 @@
+.card {
+  background-color: var(--secondary-color);
+  width: 800px;
+  min-height: 400px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin: 45px auto;
+}
