@@ -1,0 +1,28 @@
+{% extends "layout.njk" %}
+
+{% block linkLogo %}
+  <a class="current" href="/">
+    <img src="/assets/logo.png" alt="Home"/>
+  </a>
+{% endblock linkLogo %}
+
+{% block linksMenu %}
+  <a href="/about">
+    Sobre
+  </a>
+
+  <a href="/recipes">
+    Receitas
+  </a>
+{% endblock linksMenu %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/not-found.css">
+{% endblock styles %}
+
+{% block content %}
+    <main id="not-found">
+        <h1>Página não encontrada</h1>
+        <p>Sinto muito mas a página que você procura não existe</p>
+    </main>
+{% endblock content %}

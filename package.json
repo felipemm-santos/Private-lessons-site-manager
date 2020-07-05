@@ -1,0 +1,23 @@
+{
+  "name": "private-lesson-site-manager",
+  "version": "0.1.0",
+  "main": "server.js",
+  "repository": "https://github.com/felipemm-santos/Private-lessons-site-manager.git",
+  "author": "Felipe Morais Mariano dos Santos <tfelipesantos99s@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.17.1",
+    "nunjucks": "^3.2.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5"
+  },
+  "scripts": {
+    "start": "npm-run-all -p nodemon browsersync",
+    "nodemon": "nodemon server.js",
+    "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public,views'"
+  }
+}

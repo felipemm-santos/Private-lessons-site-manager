@@ -1,0 +1,13 @@
+#not-found {
+  height: 200px;
+  text-align: center;
+}
+
+#not-found h1 {
+  font-size: 48px;
+}
+
+#not-found p {
+  margin-top: 30px;
+  font-size: 36px;
+}
