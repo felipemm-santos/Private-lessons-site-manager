@@ -1,16 +1,73 @@
 .card {
   background-color: var(--secondary-color);
 
-  width: 800px;
+  width: 960px;
   min-height: 400px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 40% 60%;
 
   margin: 45px auto;
+
+  box-shadow: 8px 8px 8px -2px rgba(51, 51, 51, 0.438);
+
+  animation: up 200ms ease;
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .avatar {
-    background: url('https://source.unsplash.com/collection/8874679/500x500')
+  background: url('https://source.unsplash.com/collection/8874679/500x500')
     no-repeat center center / cover;
+}
+
+.details {
+  padding: 32px;
+}
+
+.details .item {
+  padding: 16px 0;
+}
+
+.details .item + .item {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.7;
+
+  color: #777777;
+}
+
+.details h3 {
+  text-transform: uppercase;
+
+  font-size: 28px;
+  font-weight: bold;
+
+  color: var(--primary-color);
+}
+
+.details .item div:nth-child(2) {
+  font-size: 24px;
+  font-weight: bold;
+
+  color: cadetblue;
+}
+
+.details .item:last-child div:nth-child(2) {
+  /* color: darksalmon; */
+  color: rgb(255, 177, 151);
 }
