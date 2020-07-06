@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-  --primary-color: rgb(106, 132, 246);
-  --secondary-color: #d1fffb;
+  /* --primary-color: rgb(95, 122, 241); */
+  /* --secondary-color: #ffffff; */
+  --primary-color: rgb(14, 170, 105);
+  --secondary-color: #fafde0;
 }
 
 * {
