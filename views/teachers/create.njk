@@ -1,0 +1,76 @@
+{% extends "layout.njk" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/teachers.css"/>
+{% endblock styles %}
+
+{% block content %}
+    <form class="card" method="POST" action="/teachers">
+        <section class="avatar"></section>
+        <section class="details">
+            <h3>Detalhes</h3>
+            <div class="item">
+                <div>Avatar url</div>
+                <div>
+                    <input type="url" name="avatar_url" placeholder="http://">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Nome</div>
+                <div>
+                    <input type="text" name="name">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Data de nascimento</div>
+                <div>
+                    <input type="date" name="birth">
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Escolaridade</div>
+                <div>
+                    <select name="schooling">
+                        <option value="high_school">
+                            Ensino Médio Completo
+                        </option>
+                        <option value="college">
+                            Ensino Superior Completo
+                        </option>
+                        <option value="master">
+                            Mestrado
+                        </option>
+                        <option value="doctorate">
+                            Doutorado
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Tipo de aula</div>
+                <div>
+                    <span>
+                        <input type="radio" name="class_type" value="poresencial" checked="checked">
+                        Presencial
+                    </span>
+                    <span>
+                        <input type="radio" name="class_type" value="distanced">
+                        À distância
+                    </span>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Áreas de atuação</div>
+                <div>
+                    <input type="text" name="subjects" placeholder="Separe por vírgulas">
+                </div>
+            </div>
+            <button type="submit">Salvar</button>
+        </section>
+    </form>
+{% endblock content %}
