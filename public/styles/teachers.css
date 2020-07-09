@@ -1,6 +1,7 @@
-:root {
-  --terciary-color: cadetblue;
-  --quaternary-color: #fbbfb386;
+:root {  
+  /* --secondary-color: cadetblue; */
+  /* --quaternary-color: #fbbfb386; */
+  --quaternary-color: #ffaa71;
 }
 
 .card {
@@ -69,7 +70,7 @@
   font-size: 24px;
   font-weight: bold;
 
-  color: var(--terciary-color);
+  color: var(--secondary-color);
 }
 
 .details .item:last-child div:nth-child(2) {
@@ -79,7 +80,7 @@
 
 .details .item span {
   background-color: var(--quaternary-color);
-  color: var(--terciary-color);
+  color: var(--secondary-color);
   text-transform: uppercase;
 
   padding: 8px 16px;
@@ -114,7 +115,7 @@ input::placeholder {
 select {
   background-color: var(--quaternary-color);
 
-  color: var(--terciary-color);
+  color: var(--secondary-color);
 
   width: 100%;
   /* height: 30px; */
@@ -125,6 +126,7 @@ select {
   border-radius: 16px;
 
   padding: 8px;
+
 }
 
 input[type='radio'] {
@@ -133,8 +135,8 @@ input[type='radio'] {
 }
 
 button[type='submit'] {
-  background-color: var(--primary-color);
-  color: #fbcc8f;
+  background-color: var(--quaternary-color);
+  color: var(--secondary-color);
 
   border-radius: 8px;
   padding: 8px 32px;
