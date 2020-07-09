@@ -1,7 +1,12 @@
+:root {
+  --terciary-color: cadetblue;
+  --quaternary-color: #fbbfb386;
+}
+
 .card {
   background-color: var(--secondary-color);
 
-  width: 960px;
+  width: 880px;
   min-height: 400px;
 
   display: grid;
@@ -64,10 +69,79 @@
   font-size: 24px;
   font-weight: bold;
 
-  color: cadetblue;
+  color: var(--terciary-color);
 }
 
 .details .item:last-child div:nth-child(2) {
   /* color: darksalmon; */
   color: rgb(255, 177, 151);
+}
+
+.details .item span {
+  background-color: var(--quaternary-color);
+  color: var(--terciary-color);
+  text-transform: uppercase;
+
+  padding: 8px 16px;
+
+  border-radius: 16px;
+
+  margin-right: 4px;
+  margin-top: 8px;
+
+  display: inline-block;
+}
+
+/* Create Teacher */
+
+input {
+  background-color: #a8a8a86b;
+  width: 100%;
+  outline: none;
+  color: #555555;
+  font-weight: bold;
+  font-size: 24px;
+
+  border-radius: 8px;
+  padding: 2px;
+}
+
+input::placeholder {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+select {
+  background-color: var(--quaternary-color);
+
+  color: var(--terciary-color);
+
+  width: 100%;
+  /* height: 30px; */
+
+  font-size: 24px;
+  font-weight: bold;
+
+  border-radius: 16px;
+
+  padding: 8px;
+}
+
+input[type='radio'] {
+  width: initial;
+  margin-right: 4px;
+}
+
+button[type='submit'] {
+  background-color: var(--primary-color);
+  color: #fbcc8f;
+
+  border-radius: 8px;
+  padding: 8px 32px;
+  margin-top: 32px;
+
+  width: 100%;
+
+  font-size: 28px;
+  font-weight: bold;
 }
