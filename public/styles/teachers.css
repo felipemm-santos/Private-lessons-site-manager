@@ -1,6 +1,5 @@
-:root {  
-  /* --secondary-color: cadetblue; */
-  /* --quaternary-color: #fbbfb386; */
+:root {
+  --terciary-color: cadetblue;
   --quaternary-color: #ffaa71;
 }
 
@@ -50,9 +49,9 @@
 
 .details h3,
 .details .item div:nth-child(1) {
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 0.7;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.7px;
 
   color: #777777;
 }
@@ -70,12 +69,12 @@
   font-size: 24px;
   font-weight: bold;
 
-  color: var(--secondary-color);
+  color: var(--terciary-color);
 }
 
 .details .item:last-child div:nth-child(2) {
   /* color: darksalmon; */
-  color: rgb(255, 177, 151);
+  color: var(--quaternary-color);
 }
 
 .details .item span {
@@ -126,7 +125,6 @@ select {
   border-radius: 16px;
 
   padding: 8px;
-
 }
 
 input[type='radio'] {
