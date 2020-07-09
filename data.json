@@ -1,0 +1,14 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "avatar_url": "http://google.com",
+      "name": "ddsdsd",
+      "birth": 961718400000,
+      "schooling": "high_school",
+      "class_type": "distanced",
+      "subjects": "Física,matemática",
+      "created_at": 1594290304077
+    }
+  ]
+}
