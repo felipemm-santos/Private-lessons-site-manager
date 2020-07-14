@@ -67,7 +67,7 @@
   color: var(--terciary-color);
 }
 
-.details .item:last-child div:nth-child(2) {
+.details .item:last-of-type div:nth-child(2) {
   /* color: darksalmon; */
   color: var(--quaternary-color);
 }
@@ -127,7 +127,8 @@ input[type='radio'] {
   margin-right: 4px;
 }
 
-button[type='submit'] {
+button[type='submit'],
+a.button {
   background-color: var(--quaternary-color);
   color: var(--secondary-color);
 
@@ -139,4 +140,11 @@ button[type='submit'] {
 
   font-size: 28px;
   font-weight: bold;
+}
+
+a.button {
+  display: block;
+  text-align: center;
+
+  text-decoration: none;
 }
