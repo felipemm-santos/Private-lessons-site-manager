@@ -1,0 +1,16 @@
+{% extends "layout.njk" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/teachers.css"/>
+{% endblock styles %}
+
+{% block content %}
+    <form class="card" method="POST" action="/teachers">
+        <section class="avatar"></section>
+        <section class="details">
+            <h3>Editar professor</h3>
+
+            {% include "teachers/fields.njk"%}
+        </section>
+    </form>
+{% endblock content %}
