@@ -18,6 +18,10 @@ routes.get('/teachers/:id/edit', teachers.edit);
 
 routes.post('/teachers', teachers.post);
 
+routes.put('/teachers', teachers.put)
+
+routes.delete('/teachers', teachers.delete)
+
 routes.get('/students', (req, res) => {
   return res.render('students');
 });

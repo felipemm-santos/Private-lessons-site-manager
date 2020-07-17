@@ -96,3 +96,47 @@ exports.edit = (req, res) => {
 
   return res.render('teachers/edit.njk', { teacher });
 };
+
+exports.put = (req, res) => {
+  const { id } = req.body;
+
+  let index = 0;
+
+  const foundTeacher = data.teachers.find((teacher, foundIndex) => {
+    if (id == teacher.id) {
+      index = foundIndex;
+      return true;
+    }
+  });
+
+  if (!foundTeacher) {
+    return res.render('not-found');
+  }
+
+  const teacher = {
+    ...foundTeacher,
+    ...req.body,
+    birth: Date.parse(req.body),
+  };
+
+  data.teachers[index] = teacher;
+  fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
+    if (err) return res.send('Write file error !');
+
+    return res.redirect(`/teachers/${id}`);
+  });
+};
+
+exports.delete = (req, res) => {
+  const { id } = req.body;
+
+  const filteredTeachers = data.teachers.filter((teacher) => id != teacher.id);
+
+  data.teachers = filteredTeachers;
+
+  fs.writeFile('data.json', JSON.stringify(data, null, 2), (err) => {
+    if (err) return res.send('Write file error!');
+
+    return res.redirect('/teachers');
+  });
+};

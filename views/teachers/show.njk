@@ -41,9 +41,16 @@
                 <div>{{teacher.created_at}}</div>
             </div>
 
-            <a class="button" href="/teachers/{{teacher.id}}/edit">
-                Editar
-            </a>
+
+            <div class="buttons">
+                <a class="button" href="/teachers/{{teacher.id}}/edit">
+                    Editar
+                </a>
+                <form id="delete-form" action="/teachers?_method=DELETE" method="post">
+                    <button type="submit">Deletar</button>
+                    <input type="hidden" name="id" value="{{teacher.id}}">
+                </form>
+            </div>
         </section>
     </div>
 {% endblock content %}

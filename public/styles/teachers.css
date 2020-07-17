@@ -148,3 +148,13 @@ a.button {
 
   text-decoration: none;
 }
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+#delete-form button {
+  background-color: orangered;
+}
