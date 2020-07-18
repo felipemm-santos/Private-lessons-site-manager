@@ -10,6 +10,16 @@ const {
   dateFormat,
 } = require('./utils');
 
+exports.index = (req, res) => {
+  const teachers = data.teachers;
+
+  for (const teacher of teachers) {
+    teacher.subjects = String(teacher.subjects).split(',');
+  }  
+
+  return res.render('teachers/index', { teachers });
+};
+
 exports.post = (req, res) => {
   const Keys = Object.keys(req.body);
 
@@ -70,7 +80,7 @@ exports.show = (req, res) => {
 
     class_type: getClassTypeText(foundTeacher.class_type),
 
-    subjects: foundTeacher.subjects.split(','),
+    subjects: String(foundTeacher.subjects).split(','),
 
     created_at: new Intl.DateTimeFormat('pt-BR').format(
       foundTeacher.created_at

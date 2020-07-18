@@ -158,3 +158,88 @@ a.button {
 #delete-form button {
   background-color: orangered;
 }
+
+/* INDEX TEACHERS */
+
+.table-container {
+  display: block;
+
+  min-height: fit-content;
+
+  padding: 40px;
+}
+
+.table-container table {
+  border-spacing: 0;
+}
+
+th,
+td {
+  font-weight: bold;  
+
+  color: var(--terciary-color);
+
+  padding: 10px;  
+}
+
+td {
+  border-top: 1px solid #b3b3b3;
+}
+
+.table-container thead tr th,
+.table-container tbody tr td {
+  text-align: center;
+}
+
+.table-container thead tr th {
+  font-size: 20px;
+}
+
+.table-container tbody tr td {
+  font-size: 18px;
+}
+
+.table-container tbody tr td:first-child {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+
+  align-items: center;
+}
+
+.table-container tbody tr td:first-child span {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+
+  background-position: center;
+  background-size: cover;
+
+  box-shadow: 3px 1px 6px -4px black;
+
+  border: 2px solid #fff;
+}
+
+.table-container tbody tr td:nth-child(2) span {
+  text-transform: uppercase;  
+  padding: 8px 16px;  
+  margin-right: 8px;
+
+  background-color: var(--quaternary-color);
+  color: var(--secondary-color);
+
+  border-radius: 16px;
+}
+
+.table-container tbody tr td:last-child a {
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+
+  padding: 10px;
+
+  border-radius: 4px;
+}

@@ -1,7 +1,7 @@
 {
   "teachers": [
     {
-      "id": 2,
+      "id": 1,
       "avatar_url": "https://source.unsplash.com/collection/8874679",
       "name": "Joel",
       "birth": 200448000000,
@@ -9,6 +9,36 @@
       "class_type": "distanced",
       "subjects": "Matemática, Física",
       "created_at": 1594719159256
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://source.unsplash.com/collection/8874679",
+      "name": "Maria",
+      "birth": 800150400000,
+      "schooling": "master",
+      "class_type": "presencial",
+      "subjects": "Português , Técnicas de redação , Artes",
+      "created_at": 1595075394409
+    },
+    {
+      "id": 3,
+      "avatar_url": "https://source.unsplash.com/collection/8874679",
+      "name": "Felipe",
+      "birth": 960150400000,
+      "schooling": "high_school",
+      "class_type": "distanced",
+      "subjects": "Matemática",
+      "created_at": 1581074394409
+    },
+    {
+      "id": 4,
+      "avatar_url": "https://source.unsplash.com/collection/8874679",
+      "name": "Ana",
+      "birth": 830150400000,
+      "schooling": "high_school",
+      "class_type": "presencial",
+      "subjects": "Português",
+      "created_at": 1595075394409
     }
   ]
 }

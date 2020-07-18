@@ -58,9 +58,11 @@
             <input type="radio" 
                 name="class_type" 
                 value="presencial" 
-                {% if teacher.class_type == "presencial" %}
+                checked="checked"
+                > Presencial
+                {# {% if teacher.class_type == "presencial" %}
                     checked="checked" 
-                {% endif %}> Presencial
+                {% endif %}> Presencial #}
         </span>
         <span>
             <input type="radio" 
