@@ -1,23 +1,27 @@
 const fs = require('fs');
 const Intl = require('intl');
 
-const data = require('./data.json');
+const data = require('../data.json');
 
 const {
   getAge,
   getGraduationText,
   getClassTypeText,
   dateFormat,
-} = require('./utils');
+} = require('../utils');
 
 exports.index = (req, res) => {
   const teachers = data.teachers;
 
   for (const teacher of teachers) {
     teacher.subjects = String(teacher.subjects).split(',');
-  }  
+  }
 
   return res.render('teachers/index', { teachers });
+};
+
+exports.create = (req, res) => {
+  return res.render('teachers/create');
 };
 
 exports.post = (req, res) => {
@@ -32,29 +36,16 @@ exports.post = (req, res) => {
 
   req.body.birth = Date.parse(req.body.birth);
   req.body.created_at = Date.now();
-  req.body.id = Number(data.teachers.length + 1);
 
-  const {
-    id,
-    avatar_url,
-    name,
-    birth,
-    schooling,
-    class_type,
-    subjects,
-    created_at,
-  } = req.body;
+  const lastTeacher = data.teachers[data.teachers.length - 1];
 
-  data.teachers.push({
-    id,
-    avatar_url,
-    name,
-    birth,
-    schooling,
-    class_type,
-    subjects,
-    created_at,
-  });
+  if (lastTeacher) {
+    req.body.id = lastTeacher.id + 1;
+  } else {
+    req.body.id = 1;
+  }
+
+  data.teachers.push(req.body);
 
   fs.writeFile('./data.json', JSON.stringify(data, null, 2), (err) => {
     if (err) return res.send('Write file error !');
@@ -101,7 +92,7 @@ exports.edit = (req, res) => {
 
   const teacher = {
     ...foundTeacher,
-    birth: dateFormat(foundTeacher.birth),
+    birth: dateFormat(foundTeacher.birth).iso,
   };
 
   return res.render('teachers/edit.njk', { teacher });
