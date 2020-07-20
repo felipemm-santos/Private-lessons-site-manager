@@ -1,8 +1,6 @@
 {% extends "layout.njk" %}
 
-{% block styles %}
-    <link rel="stylesheet" href="/styles/teachers.css"/>
-{% endblock styles %}
+{% block styles %}{% endblock styles %}
 
 {% block content %}
     <div class="card">
@@ -41,12 +39,11 @@
                 <div>{{teacher.created_at}}</div>
             </div>
 
-
             <div class="buttons">
                 <a class="button" href="/teachers/{{teacher.id}}/edit">
                     Editar
                 </a>
-                <form id="delete-form" action="/teachers?_method=DELETE" method="post">
+                <form id="form-delete" action="/teachers?_method=DELETE" method="post">
                     <button type="submit">Deletar</button>
                     <input type="hidden" name="id" value="{{teacher.id}}">
                 </form>
@@ -54,3 +51,7 @@
         </section>
     </div>
 {% endblock content %}
+
+{% block scripts %}
+    <script src="/scripts/delete-form.js"></script>
+{% endblock scripts %}

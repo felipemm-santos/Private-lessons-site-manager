@@ -52,4 +52,25 @@ module.exports = {
       iso: `${year}-${month}-${day}`,
     };
   },
+
+  getGradeText: (gradeValue) => {
+    switch (gradeValue) {
+      case '5EF':
+        return '5º Ano do Ensino Fundamental';
+      case '6EF':
+        return '6º Ano do Ensino Fundamental';
+      case '7EF':
+        return '7º Ano do Ensino Fundamental';
+      case '8EF':
+        return '8º Ano do Ensino Fundamental';
+      case '9EF':
+        return '9º Ano do Ensino Fundamental';
+      case '1EM':
+        return '1º Ano do Ensino Médio';
+      case '2EM':
+        return '2º Ano do Ensino Médio';
+      case '3EM':
+        return '3º Ano do Ensino Médio';
+    }
+  },
 };

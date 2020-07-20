@@ -11,10 +11,13 @@ const {
 } = require('../utils');
 
 exports.index = (req, res) => {
-  const teachers = data.teachers;
-
-  for (const teacher of teachers) {
-    teacher.subjects = String(teacher.subjects).split(',');
+  let teachers = []
+  
+  for (const teacher of data.teachers) {
+    teachers.push({
+      ...teacher,
+      subjects: String(teacher.subjects).split(',')
+    })
   }
 
   return res.render('teachers/index', { teachers });
@@ -117,7 +120,7 @@ exports.put = (req, res) => {
   const teacher = {
     ...foundTeacher,
     ...req.body,
-    birth: Date.parse(req.body),
+    birth: Date.parse(req.body.birth),
   };
 
   data.teachers[index] = teacher;

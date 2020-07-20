@@ -1,56 +1,49 @@
 {% extends "layout.njk" %}
 
-{% block styles %}
-    <link rel="stylesheet" href="/styles/teachers.css"/>
+{% block styles %}    
 {% endblock styles %}
 
 {% block content %}
     <div class="card">
-        <section class="avatar" style="background: url('{{teacher.avatar_url}}') no-repeat center center / cover;"></section>
+        <section class="avatar" style="background: url('{{student.avatar_url}}') no-repeat center center / cover;"></section>
         <section class="details">
             <h3>Detalhes</h3>
 
             <div class="item">
                 <div>Nome</div>
-                <div>{{teacher.name}}</div>
+                <div>{{student.name}}</div>
+            </div>
+            <div class="item">
+                <div>Email</div>
+                <div>{{student.email}}</div>
             </div>
             <div class="item">
                 <div>Idade</div>
-                <div>{{teacher.age}}</div>
-            </div>
+                <div>{{student.age}} anos</div>
+            </div>        
             <div class="item">
-                <div>Escolaridade</div>
-                <div>{{teacher.schooling}}</div>
-            </div>
-            <div class="item">
-                <div>Tipo de aula</div>
-                <div>{{teacher.class_type}}</div>
-            </div>
-            <div class="item">
-                <div>Acompanhamento</div>
-                <div>
-                    {% for subject in teacher.subjects %}
-                        <span>
-                            {{subject}}
-                        </span>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="item">
-                <div>Desde</div>
-                <div>{{teacher.created_at}}</div>
-            </div>
+                <div>Ano escolar</div>
+                <div>{{student.school_year}}</div>
+            </div>  
 
+            <div class="item">
+                <div>Carga horária semanal</div>
+                <div>{{student.study_hours}} horas</div>
+            </div>  
 
             <div class="buttons">
-                <a class="button" href="/teachers/{{teacher.id}}/edit">
+                <a class="button" href="/students/{{student.id}}/edit">
                     Editar
                 </a>
-                <form id="delete-form" action="/teachers?_method=DELETE" method="post">
+                <form id="form-delete" action="/students?_method=DELETE" method="post">
                     <button type="submit">Deletar</button>
-                    <input type="hidden" name="id" value="{{teacher.id}}">
+                    <input type="hidden" name="id" value="{{student.id}}">
                 </form>
             </div>
         </section>
     </div>
 {% endblock content %}
+
+{% block scripts %}
+    <script src="/scripts/delete-form.js"></script>
+{% endblock scripts %}

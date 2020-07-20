@@ -3,18 +3,16 @@ const Intl = require('intl');
 
 const data = require('../data.json');
 
-const {
-  getAge,
-  getGraduationText,
-  getClassTypeText,
-  dateFormat,
-} = require('../utils');
+const { getAge, getGradeText, dateFormat } = require('../utils');
 
 exports.index = (req, res) => {
-  const students = data.students;
+  let students = [];
 
-  for (const student of students) {
-    student.subjects = String(student.subjects).split(',');
+  for (const student of data.students) {
+    students.push({
+      ...student,
+      school_year: getGradeText(student.school_year),
+    });
   }
 
   return res.render('students/index', { students });
@@ -35,7 +33,6 @@ exports.post = (req, res) => {
   }
 
   req.body.birth = Date.parse(req.body.birth);
-  req.body.created_at = Date.now();
 
   const lastStudent = data.students[data.students.length - 1];
 
@@ -66,16 +63,7 @@ exports.show = (req, res) => {
   const student = {
     ...foundStudent,
     age: getAge(foundStudent.birth),
-
-    schooling: getGraduationText(foundStudent.schooling),
-
-    class_type: getClassTypeText(foundStudent.class_type),
-
-    subjects: String(foundStudent.subjects).split(','),
-
-    created_at: new Intl.DateTimeFormat('pt-BR').format(
-      foundStudent.created_at
-    ),
+    school_year: getGradeText(foundStudent.school_year),
   };
 
   return res.render('students/show', { student });
@@ -117,7 +105,7 @@ exports.put = (req, res) => {
   const student = {
     ...foundStudent,
     ...req.body,
-    birth: Date.parse(req.body),
+    birth: Date.parse(req.body.birth),
   };
 
   data.students[index] = student;

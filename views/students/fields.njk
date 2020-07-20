@@ -1,87 +1,68 @@
 <div class="item">
     <div>Avatar url</div>
     <div>
-        <input type="url" name="avatar_url" placeholder="http://" value="{{teacher.avatar_url}}">
+        <input type="url" name="avatar_url" placeholder="http://" value="{{student.avatar_url}}">
     </div>
 </div>
 
 <div class="item">
     <div>Nome</div>
     <div>
-        <input type="text" name="name" value="{{teacher.name}}">
+        <input type="text" name="name" value="{{student.name}}">
+    </div>
+</div>
+
+<div class="item">
+    <div>Email</div>
+    <div>
+        <input type="email" name="email" value="{{student.email}}">
     </div>
 </div>
 
 <div class="item">
     <div>Data de nascimento</div>
     <div>
-        <input type="date" name="birth" value="{{teacher.birth}}">
+        <input type="date" name="birth" value="{{student.birth}}">
     </div>
 </div>
 
 <div class="item">
-    <div>Escolaridade</div>
+    <div>Ano Escolar</div>
     <div>
-        <select name="schooling">
-            <option value="high_school" 
-                {% if teacher.schooling == "high_school" %}
-                    selected="selected" 
-                {% endif %}>
-                    Ensino Médio Completo
+        <select name="school_year">
+            <option value="5EF" {% if student.school_year == "5EF" %} selected="selected" {% endif %}>
+                5º Ano Ensiono Fundamental
             </option>
-            <option value="college"
-                {% if teacher.schooling == "college" %}
-                    selected="selected" 
-                {% endif %}>
-                    Ensino Superior Completo
+            <option value="6EF" {% if student.school_year == "6EF" %} selected="selected" {% endif %}>
+                6º Ano do Ensino Fundamental
             </option>
-            <option value="master"
-                {% if teacher.schooling == "master" %}
-                    selected="selected" 
-                {% endif %}>
-                    Mestrado
+            <option value="7EF" {% if student.school_year == "7EF" %} selected="selected" {% endif %}>
+                7º Ano do Ensino Fundamental
             </option>
-            <option value="doctorate"
-                {% if teacher.schooling == "doctorate" %}
-                    selected="selected" 
-                {% endif %}>
-                Doutorado
+            <option value="8EF" {% if student.school_year == "8EF" %} selected="selected" {% endif %}>
+                8º Ano do Ensino Fundamental
+            </option>
+            <option value="9EF" {% if student.school_year == "9EF" %} selected="selected" {% endif %}>
+                9º Ano do Ensino Fundamental
+            </option>
+            <option value="1EM" {% if student.school_year == "1EM" %} selected="selected" {% endif %}>
+                1º Ano do Ensino Médio
+            </option>
+            <option value="2EM" {% if student.school_year == "2EM" %} selected="selected" {% endif %}>
+                2º Ano do Ensino Médio
+            </option>
+            <option value="3EM" {% if student.school_year == "3EM" %} selected="selected" {% endif %}>
+                3º Ano do Ensino Médio
             </option>
         </select>
     </div>
 </div>
 
 <div class="item">
-    <div>Tipo de aula</div>
+    <div>Carga horária semanal</div>
     <div>
-        <span>
-            <input type="radio" 
-                name="class_type" 
-                value="presencial" 
-                checked="checked"
-                > Presencial
-                {# {% if teacher.class_type == "presencial" %}
-                    checked="checked" 
-                {% endif %}> Presencial #}
-        </span>
-        <span>
-            <input type="radio" 
-                name="class_type" 
-                value="distanced"
-                {% if teacher.class_type == "distanced" %}
-                    checked="checked" 
-                {% endif %}> À distância
-        </span>
+        <input type="number" name="study_hours" value="{{student.study_hours}}">
     </div>
 </div>
 
-<div class="item">
-    <div>Áreas de atuação</div>
-    <div>
-        <input type="text" 
-            name="subjects" 
-            placeholder="Separe por vírgulas"
-            value="{{teacher.subjects}}">
-    </div>
-</div>
 <button type="submit">Salvar</button>
