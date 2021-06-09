@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.html": "njk"
+    },
+    "emmet.includeLanguages": {
+        "njk": "html"
+    },
+    "material-icon-theme.files.associations": {
+        "*.html": "nunjucks"
+    },
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.columnSelection": false,
+}

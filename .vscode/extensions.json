@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "2gua.rainbow-brackets",
+        "akamud.vscode-javascript-snippet-pack",
+        "dracula-theme.theme-dracula",
+        "formulahendry.auto-rename-tag",
+        "PKief.material-icon-theme",
+        "ritwickdey.LiveServer",
+        "lihui.vs-color-picker",
+        "bradgashler.htmltagwrap",
+        "eseom.nunjucks-template",
+        "miramac.vscode-exec-node",
+        "jeremyrajan.browsersync",
+    ],
+}
