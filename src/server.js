@@ -12,7 +12,7 @@ server.use(routes);
 
 server.set('view engine', 'njk');
 
-nunjucks.configure('views', {
+nunjucks.configure('src/app/views', {
   express: server,
 
   // Permite html dentro de variáveis
