@@ -19,26 +19,26 @@ module.exports = {
 
   getGraduationText: (schooling) => {
     switch (schooling) {
-      case 'high_school':
-        return 'Ensino Médio Completo';
-      case 'college':
-        return 'Ensino Superior Completo';
-      case 'master':
-        return 'Mestrado';
-      case 'doctorate':
-        return 'Doutorado';
+      case "high_school":
+        return "Ensino Médio Completo";
+      case "college":
+        return "Ensino Superior Completo";
+      case "master":
+        return "Mestrado";
+      case "doctorate":
+        return "Doutorado";
     }
   },
 
   getClassTypeText: (classType) => {
-    if (classType == 'distanced') {
-      return 'Á distância';
+    if (classType == "distanced") {
+      return "Á distância";
     } else {
-      return 'Presencial';
+      return "Presencial";
     }
   },
 
-  dateFormat: (timestamp) => {
+  date: (timestamp) => {
     const date = new Date(timestamp);
 
     const year = date.getUTCFullYear();
@@ -50,27 +50,28 @@ module.exports = {
       month,
       year,
       iso: `${year}-${month}-${day}`,
+      format: `${day}/${month}/${year}`,
     };
   },
 
   getGradeText: (gradeValue) => {
     switch (gradeValue) {
-      case '5EF':
-        return '5º Ano do Ensino Fundamental';
-      case '6EF':
-        return '6º Ano do Ensino Fundamental';
-      case '7EF':
-        return '7º Ano do Ensino Fundamental';
-      case '8EF':
-        return '8º Ano do Ensino Fundamental';
-      case '9EF':
-        return '9º Ano do Ensino Fundamental';
-      case '1EM':
-        return '1º Ano do Ensino Médio';
-      case '2EM':
-        return '2º Ano do Ensino Médio';
-      case '3EM':
-        return '3º Ano do Ensino Médio';
+      case "5EF":
+        return "5º Ano do Ensino Fundamental";
+      case "6EF":
+        return "6º Ano do Ensino Fundamental";
+      case "7EF":
+        return "7º Ano do Ensino Fundamental";
+      case "8EF":
+        return "8º Ano do Ensino Fundamental";
+      case "9EF":
+        return "9º Ano do Ensino Fundamental";
+      case "1EM":
+        return "1º Ano do Ensino Médio";
+      case "2EM":
+        return "2º Ano do Ensino Médio";
+      case "3EM":
+        return "3º Ano do Ensino Médio";
     }
   },
 };
